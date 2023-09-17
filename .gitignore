@@ -1,0 +1,10 @@
+node_modules
+Thumbs.db
+.idea
+.DS_Store
+.vscode
+.DS_Store?
+ehthumbs.db
+._*
+.Spotlight-V100
+.Trashes
