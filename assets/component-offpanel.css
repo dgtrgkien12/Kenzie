@@ -1,0 +1,60 @@
+.offpanel {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  visibility: hidden;
+  pointer-events: none;
+  z-index: 1045;
+}
+
+.offpanel.open {
+  visibility: visible;
+  pointer-events: initial;
+}
+
+.offpanel.open .offpanel__backdrop {
+  opacity: 1;
+}
+
+.offpanel.open .offpanel__panel {
+  transform: none;
+}
+
+.offpanel.hidding {
+  visibility: visible;
+}
+
+.offpanel__backdrop {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0,0.6);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.offpanel__close .svg-icon {
+  pointer-events: none;
+}
+
+.offpanel__panel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: var(--offpanel-width, 470px);
+  max-width: 100%;
+  background-color: rgb(var(--color-background));
+  transform: translateX(-100%);
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 10;
+}
+
+body.offpanel-opened {
+  overflow: hidden;
+}

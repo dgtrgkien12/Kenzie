@@ -1,0 +1,67 @@
+{% comment %}
+  Renders a standard dropdown style menu for the header.
+
+  Usage:
+  {% render 'header-dropdown-menu' %}
+{% endcomment %}
+
+{% assign links = links | default: section.settings.menu.links %}
+
+<nav class="header-menu header-menu--dropdown">
+  <ul class="header-menu__menu list-menu list-menu--inline" role="list">
+    {%- for link in links -%}
+      <li class="header-menu__item list-menu__item h-full flex items-center header-menu__item-top{% if link.links != blank %} list-menu-item--has-child{% endif %}{% if link.current %} list-menu-item--current{% elsif link.child_current %} list-menu-item--current-child{% endif %}">
+          <a
+            href="{{ link.url }}"
+            class="header-menu__link"
+            {% if link.current %}
+              aria-current="page"
+            {% elsif link.child_current %}
+              aria-current="true"
+            {% endif %}
+          >
+            <span>{{- link.title | escape -}}</span>
+          </a>
+          {%- if link.links != blank -%}
+            <ul
+              class="header-menu__submenu list-menu__submenu"
+              aria-expanded="false"
+              role="list"
+              tabindex="-1"
+            >
+              {%- for childlink in link.links -%}
+                <li class="header-menu__item list-menu__item header-menu__item--child">
+                  <a
+                    href="{{ childlink.url }}"
+                    class="header-menu__link"
+                    {% if childlink.current %}
+                      aria-current="page"
+                    {% endif %}
+                  >
+                    <span>{{ childlink.title | escape }}</span>
+                  </a>
+                  {%- if childlink.links != blank -%}
+                    <ul class="header-menu__submenu list-menu__submenu">
+                      {%- for grandchildlink in childlink.links -%}
+                        <li class="header-menu__item list-menu__item header-menu__item--child">
+                          <a
+                            href="{{ grandchildlink.url }}"
+                            class="header-menu__link"
+                            {% if grandchildlink.current %}
+                              aria-current="page"
+                            {% endif %}
+                          >
+                            <span>{{ grandchildlink.title | escape }}</span>
+                          </a>
+                        </li>
+                      {%- endfor -%}
+                    </ul>
+                  {%- endif -%}
+                </li>
+              {%- endfor -%}
+            </ul>
+          {%- endif -%}
+      </li>
+    {%- endfor -%}
+  </ul>
+</nav>

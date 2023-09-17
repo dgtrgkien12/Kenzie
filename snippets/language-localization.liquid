@@ -1,0 +1,38 @@
+{%- if localization.available_languages.size > 1 -%}
+  <div class="language-selector localization-selector">
+    <localization-form class="no-js-hidden">
+      {%- form 'localization', id: 'LanguageForm', class: 'localization-form' -%}
+        <div class="localization-form__dropdown">
+          <button type="button" class="localization-form__selector button button--plain button--icon" aria-expanded="false" aria-controls="LanguageList">
+            <span class="button__text">{{ localization.language.endonym_name | capitalize }}</span>
+            {% render 'icon-caret' %}
+          </button>
+          <div class="localization__list-wrapper">
+            <ul id="LanguageList" role="list" class="localization__list">
+              {%- for language in localization.available_languages -%}
+                <li class="localization__list-item{% if language.iso_code == localization.language.iso_code %} current{% endif %}" tabindex="-1">
+                  <a href="#" class="" hreflang="{{ language.iso_code }}" lang="{{ language.iso_code }}"{% if language.iso_code == localization.language.iso_code %} aria-current="true"{% endif %} data-value="{{ language.iso_code }}">
+                    {{ language.endonym_name | capitalize }}
+                  </a>
+                </li>
+              {%- endfor -%}
+            </ul>
+          </div>
+          <input type="hidden" name="locale_code" value="{{ localization.language.iso_code }}">
+        </div>
+      {% endform %}
+    </localization-form>
+    <noscript>
+      {%- form 'localization', id: 'LanguageForm', class: 'localization-form' -%}
+        <select class="localization-form__selector" name="locale_code">
+          {%- for language in localization.available_languages -%}
+            <option value="{{ language.iso_code }}" lang="{{ language.iso_code }}" {%- if language.iso_code == localization.language.iso_code %} selected{% endif %}>
+              {{ language.endonym_name | capitalize }}
+            </option>
+          {%- endfor -%}
+        </select>
+        <button class="button localization-form__submit">{{ 'localization.update_language' | t }}</button>
+      {%- endform -%}
+    </noscript>
+  </div>
+{%- endif -%}

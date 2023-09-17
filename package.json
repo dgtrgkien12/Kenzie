@@ -1,0 +1,5 @@
+{
+  "scripts": {
+    "dev": "shopify theme dev --store sober-dev --theme-editor-sync"
+  }
+}

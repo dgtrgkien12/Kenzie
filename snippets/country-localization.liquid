@@ -1,0 +1,38 @@
+{%- if localization.available_countries.size > 1 -%}
+  <div class="country-selector localization-selector">
+    <localization-form class="no-js-hidden">
+      {%- form 'localization', id: 'CountryForm', class: 'localization-form' -%}
+        <div class="localization-form__dropdown">
+          <button type="button" class="localization-form__selector button button--plain button--icon" aria-expanded="false" aria-controls="CountryList">
+            <span class="button__text">{{- localization.country.currency.iso_code }}</span>
+            {% render 'icon-caret' %}
+          </button>
+          <div class="localization__list-wrapper">
+            <ul id="CountryList" role="list" class="localization__list">
+              {%- for country in localization.available_countries -%}
+                <li class="localization__list-item{% if country.iso_code == localization.country.iso_code %} current{% endif %}" tabindex="-1">
+                  <a href="#" class="capitalize block px-4 py-2.5 hover:bg-gray-50" {% if country.iso_code == localization.country.iso_code %} aria-current="true"{% endif %} data-value="{{ country.iso_code }}">
+                    {{ country.currency.iso_code }}
+                  </a>
+                </li>
+              {%- endfor -%}
+            </ul>
+          </div>
+        </div>
+        <input type="hidden" name="country_code" value="{{ localization.country.iso_code }}">
+      {%- endform -%}
+    </localization-form>
+    <noscript>
+      {%- form 'localization', id: 'CountryForm', class: 'localization-form' -%}
+        <select class="localization-form__selector" name="country_code">
+          {%- for country in localization.available_countries -%}
+            <option value="{{ country.iso_code }}" {%- if country.iso_code == localization.country.iso_code %} selected{% endif %}>
+              {{ country.currency.iso_code }} {{ country.currency.symbol }}
+            </option>
+          {%- endfor -%}
+        </select>
+        <button class="button localization-form__submit">{{ 'localization.update_country' | t }}</button>
+      {%- endform -%}
+    </noscript>
+  </div>
+{%- endif -%}

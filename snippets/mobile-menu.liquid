@@ -1,0 +1,82 @@
+{% comment %}
+  Renders mobile menu panel
+
+  Usage:
+  {% render 'header-mobile-menu', menu: section.settings.menu, logo: section.settings.logo, show_socials: true %}
+{% endcomment %}
+
+{% assign links = links | default: section.settings.menu.links %}
+
+<nav class="mobile-menu">
+  <ul class="mobile-menu__menu" role="list">
+    {%- for link in links -%}
+      <li class="mobile-menu-item{% if link.links != blank %} mobile-menu-item--has-child{% endif %}{% if link.current %} mobile-menu-item--current{% elsif link.child_current %} mobile-menu-item--current-child{% endif %}">
+        <span class="mobile-menu-item__wrapper">
+          <a
+            href="{{ link.url }}"
+            class="mobile-menu__link"
+            {% if link.current %}
+              aria-current="page"
+            {% endif %}
+          >
+            <span>{{- link.title | escape -}}</span>
+          </a>
+          {%- if link.links != blank -%}
+            <button class="mobile-menu__submenu-toggle menu-collapsible__toggle button button--icon button--plain">
+              {% render 'icon-caret' %}
+              <span class="visually-hidden">{{ 'sections.header.menu_open' | t: title: link.title }}</span>
+            </button>
+          {%- endif -%}
+        </span>
+        {%- if link.links != blank -%}
+          <ul
+            class="mobile-menu__submenu menu-collapsible__submenu"
+            aria-expanded="false"
+            aria-hidden="true"
+            role="list"
+            tabindex="-1"
+          >
+            {%- for childlink in link.links -%}
+              <li class="mobile-menu-item mobile-menu-item--child">
+                <span class="mobile-menu-item__wrapper">
+                  <a
+                    href="{{ childlink.url }}"
+                    class="mobile-menu__link"
+                    {% if childlink.current %}
+                      aria-current="page"
+                    {% endif %}
+                  >
+                    <span>{{ childlink.title | escape }}</span>
+                  </a>
+                </span>
+                {%- if childlink.links != blank -%}
+                  <ul
+                    class="mobile-menu__submenu"
+                    aria-expanded="false"
+                    aria-hidden="true"
+                    role="list"
+                    tabindex="-1"
+                  >
+                    {%- for grandchildlink in childlink.links -%}
+                      <li class="mobile-menu-item mobile-menu-item--child">
+                        <a
+                          href="{{ grandchildlink.url }}"
+                          class="mobile-menu__link"
+                          {% if grandchildlink.current %}
+                            aria-current="page"
+                          {% endif %}
+                        >
+                          <span>{{ grandchildlink.title | escape }}</span>
+                        </a>
+                      </li>
+                    {%- endfor -%}
+                  </ul>
+                {%- endif -%}
+              </li>
+            {%- endfor -%}
+          </ul>
+        {%- endif -%}
+      </li>
+    {%- endfor -%}
+  </ul>
+</nav>

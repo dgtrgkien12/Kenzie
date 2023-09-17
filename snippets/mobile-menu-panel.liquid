@@ -1,0 +1,39 @@
+<off-panel id="header-mobile-menu" class="offpanel mobile-menu-panel">
+  <div class="offpanel__backdrop"></div>
+    <div class="offpanel__panel">
+      {%- if localization.available_countries.size > 1 or localization.available_countries.size > 1 -%}
+        <div class="offpanel-inner__top">
+          {%- render 'country-localization' -%}
+          {%- render 'language-localization' -%}
+        </div>
+      {%- endif -%}
+      <form action="{{ routes.search_url }}" method="get" role="search" class="search search-panel__form">
+        <div class="search-fields">
+          <button class="button button--icon button--plain search-submit" aria-label="{{ 'general.search.search' | t }}">
+            {% render 'icon-search' %}
+          </button>
+          <input class="input-text search-input"
+            id="{{ input_id }}"
+            type="search"
+            name="q"
+            value="{{ search.terms | escape }}"
+            placeholder="{{ 'general.search.search' | t }}"
+          >
+          <input type="hidden" name="options[prefix]" value="last">
+        </div>
+      </form>
+      {% render 'mobile-menu' %}
+      <div class="offpanel-inner__bottom">
+        <ul>
+          <li class="item-cart">
+            <a href="{{ routes.cart_url }}" class="button button--icon button--plain">{% render 'icon-cart' %}{{ 'general.shopping_cart' | t }}</a>
+          </li>
+          <li class="item-account">
+            <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}" class="button button--icon button--plain">
+              {% render 'icon-account' %}{{ 'customer.login_page.title' | t }}
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+</off-panel>
