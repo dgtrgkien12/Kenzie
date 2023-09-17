@@ -1,9 +1,10 @@
 {
   "current": {
+    "logo": "shopify:\/\/shop_images\/kenzie-logo.svg",
     "logo_width": 130,
-    "type_header_font": "poppins_n5",
+    "type_header_font": "helvetica_n7",
     "heading_scale": 100,
-    "type_body_font": "poppins_n4",
+    "type_body_font": "helvetica_n4",
     "body_scale": 100,
     "page_width": 1200,
     "spacing_sections": 0,

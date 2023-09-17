@@ -1,5 +1,5 @@
 {
   "scripts": {
-    "dev": "shopify theme dev --store sober-dev --theme-editor-sync"
+    "dev": "shopify theme dev --store kenzie-theme --theme-editor-sync"
   }
 }
