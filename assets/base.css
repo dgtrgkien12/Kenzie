@@ -1,28 +1,26 @@
 :root {
-  --global-size--xxs: 0.625rem; /*10px*/
   --global-size--xs: 0.75rem; /*12px*/
   --global-size--sm: 0.875rem; /*14px*/
   --global-size--base: 1rem; /*16px*/
   --global-size--md: 1.125rem; /*18px*/
   --global-size--lg: 1.25rem; /*20px*/
   --global-size--xl: 1.5rem; /*24px*/
-  --global-size--2xl: 2rem; /*32px*/
-  --global-size--3xl: 2.5rem; /*40px*/
-  --global-size--4xl: 3.75rem; /*60px*/
-  --global-size--5xl: 4.5rem; /*72px*/
-  --global-size--6xl: 5.625rem; /*90px*/
+  --global-size--2xl: 2.25rem; /*36px*/
+  --global-size--3xl: 3rem; /*48px*/
+  --global-size--4xl: 4rem; /*64px*/
 
-  --color-background: 255,255,255;
-  --color-foreground: 124,124,128;
-  --color-heading: 35,35,44;
+
+  --color-background: 255,255,255; /*FFF*/
+  --color-foreground: 95,97,96; /*5F6160*/
+  --color-heading: 25,29,27; /*191d1b*/
   --gradient-background: 124,124,128;
-  --color-button: 35,35,44;
+  --color-button: 0,119,110; /*00776E*/
   --color-button-text: 255,255,255;
   --color-secondary-button: 255,255,255;
-  --color-secondary-button-text: 35,35,44;
-  --color-shadow: 124,124,128;
-  --color-input-label: 35,35,44;
-  --color-input-border: 35,35,44;
+  --color-secondary-button-text: 0,119,110; /*00776E*/
+  --color-shadow: 124,124,128; 
+  --color-input-label: 25,29,27; /*5F6160*/
+  --color-input-border: 25,29,27; /*5F6160*/
 
   --global-spacing--xxs: 0.313rem; /*5px*/
   --global-spacing--xs: 0.625rem; /*10px*/
@@ -151,7 +149,7 @@ html.no-js .no-js-hidden {
 
 @media screen and (min-width: 750px) {
   .page-width--fluid {
-    padding: 0 2.5rem;
+    padding: 0 6.25rem;
   }
 
   .hidden-lg {
