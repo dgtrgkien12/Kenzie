@@ -89,3 +89,12 @@
   top: -20px;
   left: calc(100% + 3px);
 }
+
+.header-menu__submenu .header-menu__submenu:before {
+  top: 0;
+  left: -3px;
+  height: 100%;
+  width: 3px;
+  position: absolute;
+  content: "";
+}
