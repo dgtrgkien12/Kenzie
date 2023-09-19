@@ -1065,17 +1065,14 @@
           "logo_center_menu_left": {
             "label": "Logo center and menu left"
           },
-          "logo_center_menu_bottom": {
-            "label": "Logo center and menu bottom"
-          },
-          "logo_center_menu_center": {
-            "label": "Logo center and menu center"
-          },
           "logo_left_menu_center": {
             "label": "Logo left and menu center"
           },
-          "logo_left_hamburger_menu": {
-            "label": "Logo left and hamburger menu"
+          "logo_left_hamburger_menu_left": {
+            "label": "Logo left and hamburger menu left"
+          },
+          "logo_left_hamburger_menu_right": {
+            "label": "Logo left and hamburger menu right"
           }
         },
         "menu": {

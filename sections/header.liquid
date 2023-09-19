@@ -41,14 +41,12 @@
       <div class="header-items header-items--left">
         {%- liquid
           case section.settings.logo_menu_position
-            when 'logo-center-menu-bottom'
-            when 'logo-center-menu-center'
-              if section.settings.show_search_icon
-                render 'header-search', input_id: 'search-modal'
-              endif
+            when 'logo-left-hamburger-menu-right'
+              render 'header-logo'
             when 'logo-left-menu-center'
               render 'header-logo'
-            when 'logo-left-hamburger-menu'
+            when 'logo-left-hamburger-menu-left'
+              render 'header-hamburger-menu'
               render 'header-logo'
             else
               render 'header-dropdown-menu'
@@ -59,13 +57,10 @@
       <div class="header-items header-items--center{% if section.settings.logo_menu_position == 'logo-left-hamburger-menu' %} hidden{% endif %}">
         {%- liquid
           case section.settings.logo_menu_position
-            when 'logo-center-menu-center'
-              render 'header-dropdown-menu', links: left_menu
-              render 'header-logo'
-              render 'header-dropdown-menu', links: right_menu
             when 'logo-left-menu-center'
               render 'header-dropdown-menu'
-            when 'logo-left-hamburger-menu'
+            when 'logo-left-hamburger-menu-left'
+            when 'logo-left-hamburger-menu-right'
             else
               render 'header-logo'
           endcase
@@ -75,7 +70,6 @@
       <div class="header-items header-items--right">
         {%- liquid
           case section.settings.logo_menu_position
-            when 'logo-center-menu-bottom'
             when 'logo-center-menu-center'
               if section.settings.show_cart_icon
                 render 'header-cart'
@@ -90,57 +84,13 @@
             if section.settings.show_cart_icon
               render 'header-cart'
             endif
+            when 'logo-left-hamburger-menu-right'
+              render 'header-hamburger-menu'
           endcase
         -%}
       </div>
     </div>
   </div>
-  {%- if section.settings.logo_menu_position == 'logo-center-menu-bottom' -%}
-    <div class="header-section header-bottom hidden-xs">
-      <div class="header-section__wrapper page-width--fluid">
-        <div class="header-items header-items--left">
-          {%- liquid
-              if show_currencies
-                render 'country-localization'
-              endif
-              if show_languages
-                render 'language-localization'
-              endif
-
-              if show_currencies == blank and show_languages == blank
-                if section.settings.show_search_icon
-                  render 'header-search', input_id: 'search-modal'
-                endif
-                if section.settings.show_account_icon
-                  render 'header-account'
-                endif
-              endif
-          -%}
-        </div>
-
-        <div class="header-items header-items--center">
-          {%- render 'header-dropdown-menu' -%}
-        </div>
-
-        <div class="header-items header-items--right">
-          {%- liquid
-            unless show_currencies == blank and show_languages == blank
-              if section.settings.show_search_icon
-                render 'header-search', input_id: 'search-modal'
-              endif
-              if section.settings.show_account_icon
-                render 'header-account'
-              endif
-            endunless
-
-            if section.settings.show_cart_icon
-              render 'header-cart'
-              endif
-          -%}
-        </div>
-      </div>
-    </div>
-  {% endif %}
   <div class="header-section header-mobile hidden-lg">
     <div class="header-section__wrapper">
       <div class="header-items header-items--left">
@@ -220,23 +170,19 @@
           "label": "t:sections.header.settings.logo_menu_position.logo_center_menu_left.label"
         },
         {
-          "value": "logo-center-menu-bottom",
-          "label": "t:sections.header.settings.logo_menu_position.logo_center_menu_bottom.label"
-        },
-        {
-          "value": "logo-center-menu-center",
-          "label": "t:sections.header.settings.logo_menu_position.logo_center_menu_center.label"
-        },
-        {
           "value": "logo-left-menu-center",
           "label": "t:sections.header.settings.logo_menu_position.logo_left_menu_center.label"
         },
         {
-          "value": "logo-left-hamburger-menu",
-          "label": "t:sections.header.settings.logo_menu_position.logo_left_hamburger_menu.label"
+          "value": "logo-left-hamburger-menu-left",
+          "label": "t:sections.header.settings.logo_menu_position.logo_left_hamburger_menu_left.label"
+        },
+        {
+          "value": "logo-left-hamburger-menu-right",
+          "label": "t:sections.header.settings.logo_menu_position.logo_left_hamburger_menu_right.label"
         }
       ],
-      "default": "logo-center-menu-left",
+      "default": "logo-left-menu-center",
       "label": "t:sections.header.settings.logo_menu_position.label",
       "info": "t:sections.header.settings.logo_menu_help.content"
     },

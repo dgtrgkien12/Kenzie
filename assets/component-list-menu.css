@@ -16,6 +16,7 @@ a {
 
 .list-menu a {
   line-height: var(--line-height-menu-item);
+  transition: 0.3s;
 }
 
 .list-menu a::after {
@@ -23,21 +24,30 @@ a {
   position: absolute;
   right: 0;
   bottom: -5px;
-  transition: all .5s;
+  transition: 0.3s;
   width: 0;
   height: 2px;
-  background-color: rgb(var(--color-heading));
+  background-color: rgb(var(--color-button));
 }
 
+.list-menu li:hover>a {
+  color: rgb(var(--color-button));
+}
 .list-menu li:hover>a::after {
   width: 100%;
   left: 0;
 }
 
 .list-menu-item--current a::after {
+  background-color: rgb(var(--color-heading));
   width: 100%;
   left: 0;
 }
+
+.list-menu-item--current:hover a::after {
+  background-color: rgb(var(--color-button));
+}
+
 .list-menu-item--current-child a::after {
   width: 100%;
   left: 0;
@@ -48,7 +58,7 @@ a {
 }
 
 .list-menu .list-menu__submenu a {
-  font-size: var(--global-size--xs);
+  font-size: var(--global-size--sm);
   font-weight: 400;
   color: rgb(var(--color-foreground));
   text-transform: none;
