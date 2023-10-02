@@ -1060,7 +1060,7 @@
         "logo_menu_help": {
           "content": "Edit your logo in [theme settings](\/editor?context=theme&category=logo)."
         },
-        "logo_menu_position": {
+        "logo_and_menu_position": {
           "label": "Desktop logo and menu position",
           "logo_center_menu_left": {
             "label": "Logo center and menu left"
@@ -1068,8 +1068,8 @@
           "logo_left_menu_center": {
             "label": "Logo left and menu center"
           },
-          "logo_left_hamburger_menu_left": {
-            "label": "Logo left and hamburger menu left"
+          "logo_center_hamburger_menu_left": {
+            "label": "Logo center and hamburger menu left"
           },
           "logo_left_hamburger_menu_right": {
             "label": "Logo left and hamburger menu right"

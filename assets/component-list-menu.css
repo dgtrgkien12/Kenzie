@@ -23,7 +23,7 @@ a {
   content: '';
   position: absolute;
   right: 0;
-  bottom: -5px;
+  bottom: 0px;
   transition: 0.3s;
   width: 0;
   height: 2px;
@@ -33,13 +33,17 @@ a {
 .list-menu li:hover>a {
   color: rgb(var(--color-button));
 }
+
 .list-menu li:hover>a::after {
   width: 100%;
   left: 0;
 }
 
+.list-menu-item--current a {
+  color: rgb(var(--color-button));
+}
+
 .list-menu-item--current a::after {
-  background-color: rgb(var(--color-heading));
   width: 100%;
   left: 0;
 }

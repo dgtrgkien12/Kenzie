@@ -19,47 +19,31 @@
 <script src="{{ 'off-canvas.js' | asset_url }}" defer="defer"></script>
 <script src="{{ 'mobile-menu.js' | asset_url }}" defer="defer"></script>
 
-{%- liquid
-  if section.settings.enable_country_selector and localization.available_countries.size > 1
-    assign show_currencies = true
-  endif
-
-  if section.settings.enable_language_selector and localization.available_languages.size > 1
-    assign show_languages = true
-  endif
-
-  if section.settings.logo_menu_position == 'logo-center-menu-center'
-    assign limit = section.settings.menu.links.size | divided_by: 2
-    assign left_menu = section.settings.menu.links | slice: 0, limit
-    assign right_menu = section.settings.menu.links | slice: limit, section.settings.menu.links.size
-  endif
--%}
-
-<header class="site-header color-{{ section.settings.color_scheme }} site-header--{{ section.settings.logo_menu_position }}">
-  <div class="header-section header-main hidden-xs">
+<header class="section-header site-header color-{{ section.settings.color_scheme }} header--{{ section.settings.logo_and_menu_position }}">
+  <div class="header-main hidden-xs">
     <div class="header-section__wrapper page-width--fluid">
       <div class="header-items header-items--left">
         {%- liquid
-          case section.settings.logo_menu_position
+          case section.settings.logo_and_menu_position
             when 'logo-left-hamburger-menu-right'
               render 'header-logo'
             when 'logo-left-menu-center'
               render 'header-logo'
-            when 'logo-left-hamburger-menu-left'
+            when 'logo-center-hamburger-menu-left'
               render 'header-hamburger-menu'
-              render 'header-logo'
             else
               render 'header-dropdown-menu'
           endcase
         -%}
       </div>
 
-      <div class="header-items header-items--center{% if section.settings.logo_menu_position == 'logo-left-hamburger-menu' %} hidden{% endif %}">
+      <div class="header-items header-items--center{% if section.settings.logo_and_menu_position == 'logo-left-hamburger-menu-left' %} hidden{% endif %}">
         {%- liquid
-          case section.settings.logo_menu_position
+          case section.settings.logo_and_menu_position
             when 'logo-left-menu-center'
               render 'header-dropdown-menu'
-            when 'logo-left-hamburger-menu-left'
+            when 'logo-center-hamburger-menu-left'
+              render 'header-logo'
             when 'logo-left-hamburger-menu-right'
             else
               render 'header-logo'
@@ -69,7 +53,7 @@
 
       <div class="header-items header-items--right">
         {%- liquid
-          case section.settings.logo_menu_position
+          case section.settings.logo_and_menu_position
             when 'logo-center-menu-center'
               if section.settings.show_cart_icon
                 render 'header-cart'
@@ -91,11 +75,13 @@
       </div>
     </div>
   </div>
-  <div class="header-section header-mobile hidden-lg">
+  <div class="header-mobile hidden-lg">
     <div class="header-section__wrapper">
       <div class="header-items header-items--left">
         <div class="header-item header-item--hamburger">
-          <button class="button button--icon button--plain" data-toggle="offpanel" data-target="header-mobile-menu">{% render 'icon-hamburger' %}</button>
+          <button class="button button--icon button--plain" data-toggle="offpanel" data-target="header-mobile-menu">
+            {% render 'icon-hamburger' %}
+          </button>
         </div>
       </div>
       <div class="header-items header-items--center">
@@ -163,27 +149,27 @@
   "settings": [
     {
       "type": "select",
-      "id": "logo_menu_position",
+      "id": "logo_and_menu_position",
       "options": [
         {
           "value": "logo-center-menu-left",
-          "label": "t:sections.header.settings.logo_menu_position.logo_center_menu_left.label"
+          "label": "t:sections.header.settings.logo_and_menu_position.logo_center_menu_left.label"
         },
         {
           "value": "logo-left-menu-center",
-          "label": "t:sections.header.settings.logo_menu_position.logo_left_menu_center.label"
+          "label": "t:sections.header.settings.logo_and_menu_position.logo_left_menu_center.label"
         },
         {
-          "value": "logo-left-hamburger-menu-left",
-          "label": "t:sections.header.settings.logo_menu_position.logo_left_hamburger_menu_left.label"
+          "value": "logo-center-hamburger-menu-left",
+          "label": "t:sections.header.settings.logo_and_menu_position.logo_center_hamburger_menu_left.label"
         },
         {
           "value": "logo-left-hamburger-menu-right",
-          "label": "t:sections.header.settings.logo_menu_position.logo_left_hamburger_menu_right.label"
+          "label": "t:sections.header.settings.logo_and_menu_position.logo_left_hamburger_menu_right.label"
         }
       ],
       "default": "logo-left-menu-center",
-      "label": "t:sections.header.settings.logo_menu_position.label",
+      "label": "t:sections.header.settings.logo_and_menu_position.label",
       "info": "t:sections.header.settings.logo_menu_help.content"
     },
     {

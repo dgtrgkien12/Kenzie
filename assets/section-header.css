@@ -52,19 +52,3 @@
 .header-section .localization-form__dropdown {
   height: 100%;
 }
-
-.site-header:not(.site-header--logo-center-menu-bottom) .header-items {
-  height: var(--header-section-height);
-}
-
-.site-header--logo-center-menu-bottom .header-main {
-  flex: 1;
-}
-
-.site-header--logo-center-menu-bottom .header-main .header-section__wrapper {
-  height: 100%;
-}
-
-.site-header--logo-center-menu-center .header__heading {
-  margin: 0 40px;
-}

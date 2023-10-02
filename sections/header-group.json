@@ -30,7 +30,7 @@
     "header": {
       "type": "header",
       "settings": {
-        "logo_menu_position": "logo-left-menu-center",
+        "logo_and_menu_position": "logo-left-menu-center",
         "menu": "main-menu",
         "show_search_icon": true,
         "show_account_icon": true,

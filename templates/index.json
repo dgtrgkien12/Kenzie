@@ -1,10 +1,24 @@
 {
   "sections": {
     "main-home": {
-      "type": "main-home"
+      "type": "main-home",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "42d82d8f-9150-48dd-a0a4-1435b8ac3281": {
+      "type": "contact-form",
+      "settings": {
+        "heading": "Contact form",
+        "heading_size": "h1",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
-    "main-home"
+    "main-home",
+    "42d82d8f-9150-48dd-a0a4-1435b8ac3281"
   ]
 }
