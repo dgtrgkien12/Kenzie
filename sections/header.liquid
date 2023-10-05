@@ -11,7 +11,6 @@
   .site-header {
     --header-section-height: {{ section.settings.min_height }}px;
     --header-mobile-height: {{ section.settings.mobile_height }}px;
-    --header-section-spacing: {{ section.settings.section_spacing }}px;
   }
 {%- endstyle -%}
 
@@ -19,7 +18,7 @@
 <script src="{{ 'off-canvas.js' | asset_url }}" defer="defer"></script>
 <script src="{{ 'mobile-menu.js' | asset_url }}" defer="defer"></script>
 
-<header class="section-header site-header color-{{ section.settings.color_scheme }} header--{{ section.settings.logo_and_menu_position }}">
+<header class="section-header site-header color-{{ section.settings.color_scheme }} header-layout--{{ section.settings.logo_and_menu_position }}">
   <div class="header-main hidden-xs">
     <div class="header-section__wrapper page-width--fluid">
       <div class="header-items header-items--left">
@@ -32,7 +31,7 @@
             when 'logo-center-hamburger-menu-left'
               render 'header-hamburger-menu'
             else
-              render 'header-dropdown-menu'
+              render 'dropdown-menu'
           endcase
         -%}
       </div>
@@ -41,7 +40,7 @@
         {%- liquid
           case section.settings.logo_and_menu_position
             when 'logo-left-menu-center'
-              render 'header-dropdown-menu'
+              render 'dropdown-menu'
             when 'logo-center-hamburger-menu-left'
               render 'logo'
             when 'logo-left-hamburger-menu-right'
@@ -117,12 +116,6 @@
     "url": {{ request.origin | append: page.url | json }}
   }
 </script>
-
-{% comment %} <script>
-  window.addEventListener('load', () => {
-    new LocalizationForm();
-  });
-</script> {% endcomment %}
 
 {%- if request.page_type == 'index' -%}
   {% assign potential_action_target = request.origin | append: routes.search_url | append: "?q={search_term_string}" %}
@@ -241,16 +234,6 @@
       "id": "min_height",
       "label": "t:sections.header.settings.min_height.label",
       "default": 100
-    },
-    {
-      "type": "range",
-      "id": "section_spacing",
-      "min": 0,
-      "max": 100,
-      "step": 10,
-      "unit": "px",
-      "label": "t:sections.header.settings.section_spacing.label",
-      "default": 20
     },
     {
       "type": "header",

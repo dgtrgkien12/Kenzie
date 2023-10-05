@@ -1,0 +1,59 @@
+{% comment %}
+    Renders the search form
+
+    Accepts:
+    - persist: {Bool} keep results on focus out.
+
+    Usage:
+    {% render 'form-search', persist: true %}
+{% endcomment %}
+{% assign persist = persist | default: false %}
+{%- if settings.predictive_search_enabled -%}
+  <predictive-search class="predictive-search__form" data-loading-text="{{ 'accessibility.loading' | t }}" data-persist="{{ persist }}">
+{%- endif -%}
+  <form action="{{ routes.search_url }}" method="get" role="search" class="search search-modal__form">
+    <div class="form-search__field search-fields">
+      <button type="submit" class="button button--icon button--plain search-submit" aria-label="{{ 'general.search.search' | t }}">
+        {% render 'icon-search' %}
+      </button>
+      <input class="form-search__input input-text search-input"
+        id="form-search__input"
+        type="text"
+        name="q"
+        value="{{ search.terms | escape }}"
+        aria-label="{{ 'general.search.search' | t }}"
+        placeholder="{{ 'general.search.search' | t }}"
+        {%- if settings.predictive_search_enabled -%}
+          role="combobox"
+          aria-expanded="false"
+          aria-owns="predictive-search-results-list"
+          aria-controls="predictive-search-results-list"
+          aria-haspopup="listbox"
+          aria-autocomplete="list"
+          autocorrect="off"
+          autocomplete="off"
+          autocapitalize="off"
+          spellcheck="false"
+        {%- endif -%}
+      >
+      {% comment %} <button type="reset" class="button button--icon button--plain search-button-reset" aria-label="{{ 'general.search.search' | t }}">
+        {% render 'icon-close' %}
+      </button> {% endcomment %}
+    </div>
+
+    <input type="hidden" name="options[fields]" value="title,body,vendor,product_type,variants.title">
+    {%- if settings.predictive_search_enabled -%}
+      <div class="predictive-search predictive-search--search-template" tabindex="-1" data-predictive-search>
+        <div class="predictive-search__loading-state">
+          <span class="loader">
+            {% render 'icon-loading' %}
+          </span>
+        </div>
+      </div>
+
+      <span class="predictive-search-status visually-hidden" role="status" aria-hidden="true"></span>
+    {%- endif -%}
+  </form>
+{%- if settings.predictive_search_enabled -%}
+  </predictive-search>
+{%- endif -%}

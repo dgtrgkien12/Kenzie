@@ -1,31 +1,20 @@
 <div class="header-item header-item--search">
-  <button class="button button--icon button--plain" data-toggle="modal" data-target="search-modal">{% render 'icon-search' %}</button>
-  <sober-modal id="search-modal" class="modal search-modal color-background-1">
-    <div class="modal-header">
-      <button class="button button--icon button--plain button-close-modal">
-        {% render 'icon-close' %}
-        <span class="visually-hidden">{{ 'general.close' | t }}</span>
-      </button>
-      <h4>{{ 'general.search.search' | t }}</h4>
-    </div>
-    <div class="modal-content">
+  <button class="button button--icon button--plain" data-toggle="offpanel" data-target="search-panel">{% render 'icon-search' %}</button>
+  <off-panel id="search-panel" class="offpanel search-panel">
+    <div class="offpanel__backdrop"></div>
+    <div class="offpanel__panel">
       <div class="page-width">
-        <form action="{{ routes.search_url }}" method="get" role="search" class="search search-modal__form">
-          <div class="search-fields">
-            <button class="button button--icon button--plain search-submit" aria-label="{{ 'general.search.search' | t }}">
-              {% render 'icon-search' %}
-            </button>
-            <input class="input-text search-input"
-              id="{{ input_id }}"
-              type="search"
-              name="q"
-              value="{{ search.terms | escape }}"
-              placeholder="{{ 'general.search.search' | t }}"
-            >
-            <input type="hidden" name="options[prefix]" value="last">
-          </div>
-        </form>
+        <div class="panel-header">
+          <h4>{{ 'general.search.search' | t }}</h4>
+          <button class="button button--icon button--plain button-close-panel">
+            {% render 'icon-close' %}
+            <span class="visually-hidden">{{ 'general.close' | t }}</span>
+          </button>
+        </div>
+        <div class="panel-content">
+          {% render 'form-search', persist: persist %}
+        </div>
       </div>
     </div>
-  </sober-modal>
+  </off-panel>
 </div>

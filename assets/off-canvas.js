@@ -8,6 +8,7 @@ class OffPanel extends HTMLElement {
 
     document.body.addEventListener('keyup', (evt) => evt.code === 'Escape' && this.isOpen && this.close());
     this.querySelector('.offpanel__backdrop').addEventListener('click', this.close );
+    // this.querySelector('.button-close-panel').addEventListener('click', this.close );
   }
 
   open() {

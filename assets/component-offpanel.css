@@ -58,3 +58,15 @@
 body.offpanel-opened {
   overflow: hidden;
 }
+
+.panel-header {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(var(--color-input-border), 0.7);
+}
+
+.panel-content {
+  padding-top: var(--global-spacing--md);
+}

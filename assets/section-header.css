@@ -2,13 +2,18 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: var(--header-section-spacing);
+  position: relative;
 	height: var(--header-section-height);
+}
+
+.header-main {
+  height: 100%;
 }
 
 .header-section__wrapper {
 	display: flex;
 	justify-content: space-between;
+  height: 100%;
 }
 
 .header-items {
