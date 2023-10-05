@@ -26,9 +26,9 @@
         {%- liquid
           case section.settings.logo_and_menu_position
             when 'logo-left-hamburger-menu-right'
-              render 'header-logo'
+              render 'logo'
             when 'logo-left-menu-center'
-              render 'header-logo'
+              render 'logo'
             when 'logo-center-hamburger-menu-left'
               render 'header-hamburger-menu'
             else
@@ -43,10 +43,10 @@
             when 'logo-left-menu-center'
               render 'header-dropdown-menu'
             when 'logo-center-hamburger-menu-left'
-              render 'header-logo'
+              render 'logo'
             when 'logo-left-hamburger-menu-right'
             else
-              render 'header-logo'
+              render 'logo'
           endcase
         -%}
       </div>
@@ -85,7 +85,7 @@
         </div>
       </div>
       <div class="header-items header-items--center">
-        {%- render 'header-logo' -%}
+        {%- render 'logo' -%}
       </div>
       <div class="header-items header-items--right">
         {%- render 'header-cart' -%}
