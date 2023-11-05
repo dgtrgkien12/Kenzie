@@ -2,7 +2,6 @@
   "sections": {
     "main-home": {
       "type": "main-home",
-      "disabled": true,
       "settings": {
       }
     },

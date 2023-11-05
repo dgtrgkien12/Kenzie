@@ -1,47 +1,67 @@
+button,
 .button {
   font-size: var(--buttons-font-size);
   font-weight: var(--buttons-font-weight);
   color: rgb(var(--color-button-text));
+  background-color: rgba(var(--color-button), var(--color-button-opacity));
   display: inline-flex;
-  justify-content: center;
   align-items: center;
-  min-height: var(--buttons-min-height);
+  justify-content: center;
+  line-height: var(--buttons-line-height);
   border: none;
   padding: var(--buttons-padding-vertical) var(--buttons-padding-horizontal);
   border-radius: var(--buttons-radius);
   position: relative;
   cursor: pointer;
   outline: none;
-  background-color: rgba(var(--color-button), var(--color-button-opacity));
-  box-shadow: inset 0 0 0 var(--buttons-border-width) rgba(var(--buttons-border-color), var(--buttons-border-opacity));
+  border: var(--buttons-border-width) solid rgba(var(--buttons-border-color), var(--buttons-border-opacity));
+  transition: 0.3s;
+}
+
+button:hover,
+.button:hover {
+  background-color: rgba(var(--color-secondary-button), var(--color-button-opacity));
+  --buttons-border-color: var(--color-secondary-button);
 }
 
 .button--md {
-  --buttons-padding-horizontal: 3.125rem;
-  --buttons-min-height: 3.75em;
+  --buttons-min-width: 18.75rem;
+  --buttons-padding-vertical: 1.563rem;
 }
 
 .button--lg {
-  --buttons-padding-horizontal: var(--base-spacing--3xl);
-  --buttons-min-height: 4.375em;
+  --buttons-min-width: 21.875rem;
+  --buttons-padding-vertical: 1.875rem;
 }
 
 .button:not(.button--outline):not(.button--underline):not(.button--icon) {
   --color-button-opacity: 1;
 }
 
+button:not(.button--underline):not(.button--icon),
+.button:not(.button--underline):not(.button--icon) {
+  min-width: var(--buttons-min-width);
+  border-radius: 999px;
+}
+
 .button--outline,
 .button--underline,
 .button--icon {
-  --color-button: var(--color-secondary-button);
-  --color-button-text: var(--color-secondary-button-text);
+  --color-button-text: var(--color-button);
+}
+
+.button--outline:hover,
+.button--plain:hover,
+.button--underline:hover,
+.button--icon:hover {
+  --color-button-text: var(--color-secondary-button);
 }
 
 .button--underline {
   --buttons-border-opacity: 0;
   --buttons-padding-vertical: 0.313rem;
   --buttons-padding-horizontal: 0;
-  --buttons-min-height: auto;
+  --buttons-min-width: auto;
 }
 
 .button--underline::after {
@@ -52,7 +72,11 @@
   width: 100%;
   border: none;
   border-bottom: var(--buttons-border-width) solid;
-  transition: all .5s;
+  transition: all 0.5s;
+}
+
+.button--underline:hover::after {
+  width: 0;
 }
 
 .button--underline.button--md {
@@ -64,15 +88,24 @@
 }
 
 .button--icon {
+  --buttons-border-opacity: 0;
+  --buttons-border-width: 0;
   --buttons-padding-vertical: 0.75rem;
   --buttons-padding-horizontal: 0.75rem;
-  --buttons-min-height: auto;
+  --buttons-line-height: 1;
 }
 
 .button--plain {
   --buttons-border-opacity: 0;
-  --color-button: var(--color-secondary-button);
-  --color-button-text: var(--color-secondary-button-text);
+  --buttons-padding-vertical: 0;
+  --buttons-padding-horizontal: 0;
+  --color-button: transparent;
+  --color-button-text: var(--color-button);
+}
+
+.button--plain:hover {
+  --buttons-border-opacity: 0;
+  background-color: transparent;
 }
 
 /* component-text-field */
