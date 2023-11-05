@@ -11,17 +11,17 @@
   --base-size--4xl: 4rem; /*64px*/
   --base-size--5xl: 5.625rem; /*90px*/
 
-  --color-background: 255,255,255; /*FFF*/
-  --color-foreground: 95,97,96; /*5F6160*/
-  --color-heading: 25,29,27; /*191d1b*/
+  --color-background: 255,255,255;
+  --color-foreground: 21,60,54;
+  --color-heading: 21,60,54;
   --gradient-background: 124,124,128;
-  --color-button: 205,134,69; /*#CD8645*/
+  --color-button: 21,60,54;
   --color-button-text: 255,255,255;
-  --color-secondary-button: 255,255,255;
-  --color-secondary-button-text: 205,134,69; /*#CD8645*/
+  --color-secondary-button: 134,191,117;
+  --color-secondary-button-text: 255,255,255;
   --color-shadow: 124,124,128; 
-  --color-input-label: 25,29,27; /*191d1b*/
-  --color-input-border: 205,134,69; /*5F6160*/
+  --color-input-label: 21,60,54; 
+  --color-input-border: 21,60,54; 
 
   --base-spacing--xxs: 0.313rem; /*5px*/
   --base-spacing--xs: 0.625rem; /*10px*/

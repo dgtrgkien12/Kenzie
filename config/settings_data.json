@@ -135,13 +135,13 @@
         "settings": {
           "background": "#ffffff",
           "background_gradient": "",
-          "heading": "#191d1b",
-          "text": "#5f6160",
-          "button": "#cd8645",
+          "heading": "#153c36",
+          "text": "#153c36",
+          "button": "#153c36",
           "button_label": "#ffffff",
-          "secondary_button_label": "#cd8645",
+          "secondary_button_label": "#86bf75",
           "shadow": "#191d1b",
-          "input_border": "#cd8645"
+          "input_border": "#153c36"
         }
       },
       "background-2": {

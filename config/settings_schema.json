@@ -56,19 +56,19 @@
             "type": "color",
             "id": "heading",
             "label": "t:settings_schema.colors.settings.heading.label",
-            "default": "#23232c"
+            "default": "#153C36"
           },
           {
             "type": "color",
             "id": "text",
             "label": "t:settings_schema.colors.settings.text.label",
-            "default": "#7C7C80"
+            "default": "#153C36"
           },
           {
             "type": "color",
             "id": "button",
             "label": "t:settings_schema.colors.settings.button_background.label",
-            "default": "#23232c"
+            "default": "#153C36"
           },
           {
             "type": "color",
@@ -78,21 +78,21 @@
           },
           {
             "type": "color",
-            "id": "secondary_button_label",
-            "label": "t:settings_schema.colors.settings.secondary_button_label.label",
-            "default": "#23232c"
+            "id": "secondary_button_background",
+            "label": "t:settings_schema.colors.settings.secondary_button_background.label",
+            "default": "#86BF75"
           },
           {
             "type": "color",
             "id": "shadow",
             "label": "t:settings_schema.colors.settings.shadow.label",
-            "default": "#23232c"
+            "default": "#153C36"
           },
           {
             "type": "color",
             "id": "input_border",
             "label": "t:settings_schema.colors.settings.input_border.label",
-            "default": "#e4e6eb"
+            "default": "#153C36"
           }
         ],
         "role": {
@@ -101,14 +101,14 @@
             "solid": "background",
             "gradient": "background_gradient"
           },
-          "links": "secondary_button_label",
+          "links": "button_label",
           "icons": "text",
           "primary_button": "button",
           "on_primary_button": "button_label",
           "primary_button_border": "button",
           "secondary_button": "background",
-          "on_secondary_button": "secondary_button_label",
-          "secondary_button_border": "secondary_button_label"
+          "on_secondary_button": "secondary_button_background",
+          "secondary_button_border": "secondary_button_background"
         }
       }
     ]

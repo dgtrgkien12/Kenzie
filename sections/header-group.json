@@ -39,7 +39,6 @@
         "enable_country_selector": true,
         "enable_language_selector": true,
         "min_height": 100,
-        "section_spacing": 20,
         "mobile_height": 65
       }
     }
