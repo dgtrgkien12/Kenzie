@@ -1,5 +1,5 @@
 .localization-selector {
-  font-size: var(--global-size--xxs);
+  font-size: var(--base-size--xxs);
   font-weight: 600;
 }
 
@@ -10,7 +10,7 @@
 }
 
 button.localization-form__selector {
-  --buttons-font-size: var(--global-size--xxs);
+  --buttons-font-size: var(--base-size--xxs);
 }
 
 .caret {

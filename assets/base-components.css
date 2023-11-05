@@ -22,7 +22,7 @@
 }
 
 .button--lg {
-  --buttons-padding-horizontal: var(--global-spacing--3xl);
+  --buttons-padding-horizontal: var(--base-spacing--3xl);
   --buttons-min-height: 4.375em;
 }
 
@@ -56,11 +56,11 @@
 }
 
 .button--underline.button--md {
-  --buttons-font-size: var(--global-size--lg);
+  --buttons-font-size: var(--base-size--lg);
 }
 
 .button--underline.button--lg {
-  --buttons-font-size: var(--global-size--xl);
+  --buttons-font-size: var(--base-size--xl);
 }
 
 .button--icon {
@@ -94,7 +94,7 @@
 
 @media (min-width: 750px) {
   :root {
-    --inputs-font-size: var(--global-size--sm);
+    --inputs-font-size: var(--base-size--sm);
   }
 }
 
@@ -114,7 +114,7 @@
 
 .input-wrapper .input-text:not([placeholder]) + label,
 .input-wrapper .input-text:not([value=""]) + label {
-  margin-bottom: var(--global-size--base);
+  margin-bottom: var(--base-size--base);
 }
 
 /* component search */

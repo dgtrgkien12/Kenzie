@@ -48,7 +48,7 @@ li.mobile-menu-item--current-child:before {
 }
 
 .mobile-menu .mobile-menu__link {
-  font-size: var(--global-size--base);
+  font-size: var(--base-size--base);
   font-weight: 600;
   color: rgb(var(--color-heading));
   text-transform: uppercase;
@@ -86,7 +86,7 @@ li.mobile-menu-item--current-child:before {
 }
 
 .mobile-menu__submenu .mobile-menu__link {
-  font-size: var(--global-size--xs);
+  font-size: var(--base-size--xs);
   color: rgb(var(--color-foreground));;
   text-transform: none;
   font-weight: 400;

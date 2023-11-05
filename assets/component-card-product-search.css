@@ -1,5 +1,5 @@
 .card-product__media {
-  margin-bottom: var(--global-size--lg);
+  margin-bottom: var(--base-size--lg);
   overflow: hidden;
   width: 210px;
   height: 253px;
@@ -23,11 +23,11 @@
 }
 
 .predictive-search__item-vendor {
-  font-size: var(--global-size--xs);
+  font-size: var(--base-size--xs);
 }
 
 .predictive-search__item-heading {
-  font-size: var(--global-size--sm);
+  font-size: var(--base-size--sm);
   color: rgb(var(--color-heading));
   text-align: center;
   font-weight: var(--font-body-weight);

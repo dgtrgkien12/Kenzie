@@ -33,7 +33,7 @@
   transition: 0.5s;
   transition-delay: 0.5s;
   border-bottom: 0;
-  padding: var(--global-spacing--xl);
+  padding: var(--base-spacing--xl);
   overflow: hidden;
   position: relative;
   opacity: 0;
@@ -50,7 +50,7 @@
 
 .modal-header h4 {
   color: rgb(var(--color-heading));
-  font-size: var(--global-size--2xl);
+  font-size: var(--base-size--2xl);
   font-weight: 300;
   margin: 0;
   line-height: 1;

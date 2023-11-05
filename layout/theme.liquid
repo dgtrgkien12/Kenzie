@@ -192,9 +192,9 @@
         --buttons-shadow-blur-radius: {{ settings.buttons_shadow_blur }}px;
         --buttons-border-offset: {% if settings.buttons_radius > 0 or settings.buttons_shadow_opacity > 0 %}0.3{% else %}0{% endif %}px;
         --buttons-min-height: 3.125em;
-        --buttons-font-size: var(--global-size--base);
+        --buttons-font-size: var(--base-size--base);
         --buttons-padding-vertical: 0;
-        --buttons-padding-horizontal: var(--global-spacing--lg);
+        --buttons-padding-horizontal: var(--base-spacing--lg);
         --buttons-font-weight: 500;
         --buttons-border-color: var(--color-button);
 
@@ -207,11 +207,11 @@
         --inputs-shadow-vertical-offset: {{ settings.inputs_shadow_vertical_offset }}px;
         --inputs-shadow-blur-radius: {{ settings.inputs_shadow_blur }}px;
         --inputs-radius-outset: {% if settings.inputs_radius > 0 %}{{ settings.inputs_radius | plus: settings.inputs_border_thickness }}{% else %}0{% endif %}px;
-        --inputs-font-size: var(--global-size--base);
+        --inputs-font-size: var(--base-size--base);
         --inputs-line-height: 1.572;
         --inputs-text-color: var(--color-input-label);
         --inputs-padding: 0.75rem;
-        --inputs-label-font-size: var(--global-size--sm);
+        --inputs-label-font-size: var(--base-size--sm);
         --checkbox-border-width: {{ settings.inputs_border_thickness | divided_by: 2.0 }}px;
 
         --variant-pills-radius: {{ settings.variant_pills_radius }}px;

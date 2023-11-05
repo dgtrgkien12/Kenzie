@@ -62,7 +62,7 @@ a {
 }
 
 .list-menu .list-menu__submenu a {
-  font-size: var(--global-size--sm);
+  font-size: var(--base-size--sm);
   font-weight: 400;
   color: rgb(var(--color-foreground));
   text-transform: none;

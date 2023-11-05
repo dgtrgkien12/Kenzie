@@ -2,25 +2,25 @@
   width: 85%;
   display: flex;
   flex-direction: column;
-  padding: var(--global-spacing--md);
+  padding: var(--base-spacing--md);
   overflow-y: auto;
 }
 
 .mobile-menu-panel .offpanel-inner__top {
   background-color: rgba(var(--color-foreground), 0.1);
   display: flex;
-  padding: var(--global-spacing--xs) 0.5rem;
-  margin: calc(var(--global-spacing--md) * -1) calc(var(--global-spacing--md) * -1) 0;
+  padding: var(--base-spacing--xs) 0.5rem;
+  margin: calc(var(--base-spacing--md) * -1) calc(var(--base-spacing--md) * -1) 0;
 }
 
 .mobile-menu-panel .localization-selector {
-  font-size: var(--global-size--xs);
+  font-size: var(--base-size--xs);
   font-weight: 400;
   flex: 1 0 50%;
 }
 
 .mobile-menu-panel .localization-form__selector {
-  --buttons-font-size: var(--global-size--base);
+  --buttons-font-size: var(--base-size--base);
   width: 100%;
   justify-content: space-between;
 }
@@ -39,7 +39,7 @@
 .mobile-menu-panel .localization__list-wrapper .localization__list {
   width: calc( 100% - 1rem );
   left: 0.5rem;
-  top: calc( 100% + var(--global-spacing--xs) );
+  top: calc( 100% + var(--base-spacing--xs) );
 }
 
 .mobile-menu-panel .mobile-menu {
@@ -47,12 +47,12 @@
 }
 
 .mobile-menu-panel .search-panel__form {
-	margin: var(--global-spacing--xxs) 0 var(--global-spacing--lg);
+	margin: var(--base-spacing--xxs) 0 var(--base-spacing--lg);
 }
 
 .mobile-menu-panel .search-fields {
 	position: relative;
-	padding: var(--global-spacing--xs) 0;
+	padding: var(--base-spacing--xs) 0;
   border-bottom: var(--inputs-border-width) solid rgba(var(--color-input-border), var(--inputs-border-opacity));
   transition: 0.5s;
 }
@@ -84,7 +84,7 @@
 }
 
 .mobile-menu-panel .search-input {
-	font-size: var(--global-size--sm);
+	font-size: var(--base-size--sm);
 	width: 100%;
 	border: 0;
 	padding: 0;
@@ -100,7 +100,7 @@
 }
 
 .mobile-menu-panel .offpanel-inner__bottom ul {
-	margin-bottom: calc(var(--global-spacing--md) * -1);
+	margin-bottom: calc(var(--base-spacing--md) * -1);
 }
 
 .mobile-menu-panel .offpanel-inner__bottom ul {
@@ -115,7 +115,7 @@
 .mobile-menu-panel .offpanel-inner__bottom ul li a {
   --buttons-padding-vertical: 1.0625rem;
   --buttons-padding-horizontal: 0;
-  font-size: var(--global-size--base);
+  font-size: var(--base-size--base);
   font-weight: 600;
   text-transform: uppercase;
   display: flex;
@@ -123,6 +123,6 @@
 }
 
 .mobile-menu-panel .offpanel-inner__bottom ul li a svg {
-  margin-right: var(--global-spacing--sm);
+  margin-right: var(--base-spacing--sm);
   min-width: 1.25em;
 }

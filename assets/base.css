@@ -1,15 +1,15 @@
 :root {
-  --global-size--xxs: 0.625rem; /*12px*/
-  --global-size--xs: 0.75rem; /*12px*/
-  --global-size--sm: 0.875rem; /*14px*/
-  --global-size--base: 1rem; /*16px*/
-  --global-size--md: 1.125rem; /*18px*/
-  --global-size--lg: 1.25rem; /*20px*/
-  --global-size--xl: 1.5rem; /*24px*/
-  --global-size--2xl: 2.25rem; /*36px*/
-  --global-size--3xl: 3rem; /*48px*/
-  --global-size--4xl: 4rem; /*64px*/
-
+  --base-size--xxs: 0.625rem; /*10px*/
+  --base-size--xs: 0.75rem; /*12px*/
+  --base-size--sm: 0.875rem; /*14px*/
+  --base-size--base: 1rem; /*16px*/
+  --base-size--md: 1.125rem; /*18px*/
+  --base-size--lg: 1.25rem; /*20px*/
+  --base-size--xl: 1.5rem; /*24px*/
+  --base-size--2xl: 2.25rem; /*36px*/
+  --base-size--3xl: 3rem; /*48px*/
+  --base-size--4xl: 4rem; /*64px*/
+  --base-size--5xl: 5.625rem; /*90px*/
 
   --color-background: 255,255,255; /*FFF*/
   --color-foreground: 95,97,96; /*5F6160*/
@@ -23,14 +23,14 @@
   --color-input-label: 25,29,27; /*191d1b*/
   --color-input-border: 205,134,69; /*5F6160*/
 
-  --global-spacing--xxs: 0.313rem; /*5px*/
-  --global-spacing--xs: 0.625rem; /*10px*/
-  --global-spacing--sm: 0.938rem; /*15px*/
-  --global-spacing--md: 1.25rem; /*20px*/
-  --global-spacing--lg: 1.875rem; /*30px*/
-  --global-spacing--xl: 2.5rem; /*40px*/
-  --global-spacing--2xl: 3.75rem; /*60px*/
-  --global-spacing--3xl: 5.625rem; /*90px*/
+  --base-spacing--xxs: 0.313rem; /*5px*/
+  --base-spacing--xs: 0.625rem; /*10px*/
+  --base-spacing--sm: 0.938rem; /*15px*/
+  --base-spacing--md: 1.25rem; /*20px*/
+  --base-spacing--lg: 1.875rem; /*30px*/
+  --base-spacing--xl: 2.5rem; /*40px*/
+  --base-spacing--2xl: 3.75rem; /*60px*/
+  --base-spacing--3xl: 5.625rem; /*90px*/
 
   --global-animation--fadein : fadeIn;
   --global-animation--fadeout : fadeOut;

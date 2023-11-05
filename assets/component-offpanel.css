@@ -68,5 +68,5 @@ body.offpanel-opened {
 }
 
 .panel-content {
-  padding-top: var(--global-spacing--md);
+  padding-top: var(--base-spacing--md);
 }
