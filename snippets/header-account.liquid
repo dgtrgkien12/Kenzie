@@ -1,6 +1,6 @@
 {%- if shop.customer_accounts_enabled -%}
   <div class="header-item header-item--account link focus-inset">
-    <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}" class="button button--icon button--plain">
+    <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}" class="button button--icon">
       {% render 'icon-account' %}
       <span class="visually-hidden">
         {%- liquid

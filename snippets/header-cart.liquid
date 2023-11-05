@@ -1,5 +1,5 @@
 <div class="header-item header-item--cart link focus-inset">
-  <a href="{{ routes.cart_url }}" class="button button--icon button--plain">
+  <a href="{{ routes.cart_url }}" class="button button--icon">
     {% render 'icon-cart' %}
     <span class="visually-hidden">{{ 'templates.cart.cart' | t }}</span>
     {%- if cart != empty -%}
