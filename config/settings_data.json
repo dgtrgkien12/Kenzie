@@ -2,9 +2,9 @@
   "current": {
     "logo": "shopify:\/\/shop_images\/kenzie-logo.svg",
     "logo_width": 130,
-    "type_header_font": "quicksand_n5",
+    "type_header_font": "futura_n5",
     "heading_scale": 100,
-    "type_body_font": "quicksand_n4",
+    "type_body_font": "futura_n4",
     "body_scale": 100,
     "page_width": 1200,
     "spacing_sections": 0,
@@ -139,6 +139,7 @@
           "text": "#153c36",
           "button": "#153c36",
           "button_label": "#ffffff",
+          "secondary_button_background": "#86BF75",
           "shadow": "#191d1b",
           "input_border": "#153c36"
         }
@@ -151,6 +152,7 @@
           "text": "#121212",
           "button": "#121212",
           "button_label": "#f3f3f3",
+          "secondary_button_background": "#86BF75",
           "shadow": "#121212",
           "input_border": "#e4e6eb"
         }
@@ -163,6 +165,7 @@
           "text": "#ffffff",
           "button": "#f5f5f5",
           "button_label": "#000000",
+          "secondary_button_background": "#86BF75",
           "shadow": "#121212",
           "input_border": "#e4e6eb"
         }
@@ -175,6 +178,7 @@
           "text": "#ffffff",
           "button": "#ffffff",
           "button_label": "#121212",
+          "secondary_button_background": "#86BF75",
           "shadow": "#121212",
           "input_border": "#e4e6eb"
         }
@@ -187,6 +191,7 @@
           "text": "#ffffff",
           "button": "#ffffff",
           "button_label": "#93122f",
+          "secondary_button_background": "#86BF75",
           "shadow": "#121212",
           "input_border": "#e4e6eb"
         }
