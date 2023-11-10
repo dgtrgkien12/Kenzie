@@ -83,8 +83,9 @@
       }
       {% endfor %}
 
+      
       {{ scheme_classes | prepend: 'body' }} {
-        color: rgb(var(--color-foreground), 0.8);
+        color: rgb(var(--color-foreground));
         background-color: rgb(var(--color-background));
       }
 
@@ -237,7 +238,7 @@
 
       body {
         font-size: calc(var(--font-body-size) * var(--font-body-scale));
-        line-height: calc(1.42 / var(--font-body-scale));
+        line-height: calc(1.778 / var(--font-body-scale));
         font-family: var(--font-body-family);
         font-style: var(--font-body-style);
         font-weight: var(--font-body-weight);
