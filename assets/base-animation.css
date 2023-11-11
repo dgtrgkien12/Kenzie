@@ -1,0 +1,58 @@
+:root {
+  --global-animation--fadein : fadeIn 0.5s;
+  --global-animation--fadeout : fadeOut  0.5s;
+  --global-animation--slideup : slideUp  0.5s;
+  --global-animation--slidedown : slideDown  0.5s;
+  --global-animation--spin : spin  0.5s;
+}
+
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(100%);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  0% {
+    transform: translateY();
+  }
+
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform:rotate(0deg)
+  }
+
+  100% {
+    transform:rotate(-360deg);
+  }
+}
