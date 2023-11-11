@@ -32,62 +32,6 @@
   --base-spacing--2xl: 3.125rem; /*50px*/
   --base-spacing--3xl: 3.75rem; /*60px*/
   --base-spacing--4xl: 6.25rem; /*100px*/
-
-  --global-animation--fadein : fadeIn;
-  --global-animation--fadeout : fadeOut;
-  --global-animation--slideup : slideUp;
-  --global-animation--slidedown : slideDown;
-  --global-animation--spin : spin;
-}
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes fadeOut {
-  0% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 0;
-  }
-}
-
-@keyframes slideUp {
-  0% {
-    transform: translateY(100%);
-  }
-
-  100% {
-    transform: translateY(0);
-  }
-}
-
-@keyframes slideDown {
-  0% {
-    transform: translateY();
-  }
-
-  100% {
-    transform: translateY(100%);
-  }
-}
-
-@keyframes spin {
-  0% {
-    transform:rotate(0deg)
-  }
-
-  100% {
-    transform:rotate(-360deg);
-  }
 }
 
 .no-js:not(html) {
@@ -113,7 +57,11 @@ html.no-js .no-js-hidden {
 .page-width {
   max-width: var(--page-width);
   margin: 0 auto;
-  padding: 0 0.9375rem;
+  padding: 0 var(--base-spacing--sm);
+}
+
+.page-width--fluid {
+  padding: 0 var(--base-spacing--sm);
 }
 
 .hidden {
@@ -145,13 +93,9 @@ html.no-js .no-js-hidden {
   clip: auto;
 }
 
-.page-width--fluid {
-  padding: 0 1.25rem;
-}
-
-@media screen and (min-width: 750px) {
+@media screen and (min-width: 768px) {
   .page-width--fluid {
-    padding: 0 6.25rem;
+    padding: 0 var(--base-spacing--4xl);
   }
 
   .hidden-lg {
@@ -159,7 +103,7 @@ html.no-js .no-js-hidden {
   }
 }
 
-@media (max-width: 749px) {
+@media (max-width: 767px) {
   .hidden-xs {
     display: none;
   }
