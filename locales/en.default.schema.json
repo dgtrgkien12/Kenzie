@@ -1075,8 +1075,23 @@
             "label": "Logo left and hamburger menu right"
           }
         },
+        "header__menu": {
+          "content": "Menu"
+        },
         "menu": {
           "label": "Menu"
+        },
+        "desktop_menu_type": {
+          "label": "Desktop menu type",
+          "menu_dropdown": {
+            "label": "Dropdown"
+          },
+          "mega_menu": {
+            "label": "Mega menu"
+          },
+          "hamburger_menu": {
+            "label": "Hamburger menu"
+          }
         },
         "header__feautured": {
           "content": "Featured icon"

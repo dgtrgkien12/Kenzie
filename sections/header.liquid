@@ -1,8 +1,8 @@
-<link rel="stylesheet" href="{{ 'component-list-menu.css' | asset_url }}" media="print" onload="this.media='all'">
-<link rel="stylesheet" href="{{ 'component-dropdown-menu.css' | asset_url }}" media="print" onload="this.media='all'">
 {{ 'section-header.css' | asset_url | stylesheet_tag }}
 {{ 'component-modal.css' | asset_url | stylesheet_tag }}
 {{ 'component-offpanel.css' | asset_url | stylesheet_tag }}
+{{ 'component-dropdown-menu.css' | asset_url | stylesheet_tag }}
+{{ 'component-list-menu.css' | asset_url | stylesheet_tag }}
 {{ 'component-search.css' | asset_url | stylesheet_tag }}
 {{ 'component-mobile-menu-panel.css' | asset_url | stylesheet_tag }}
 {{ 'component-mobile-menu.css' | asset_url | stylesheet_tag }}
@@ -145,12 +145,12 @@
       "id": "logo_and_menu_position",
       "options": [
         {
-          "value": "logo-center-menu-left",
-          "label": "t:sections.header.settings.logo_and_menu_position.logo_center_menu_left.label"
-        },
-        {
           "value": "logo-left-menu-center",
           "label": "t:sections.header.settings.logo_and_menu_position.logo_left_menu_center.label"
+        },
+        {
+          "value": "logo-center-menu-left",
+          "label": "t:sections.header.settings.logo_and_menu_position.logo_center_menu_left.label"
         },
         {
           "value": "logo-center-hamburger-menu-left",
@@ -166,10 +166,34 @@
       "info": "t:sections.header.settings.logo_menu_help.content"
     },
     {
+      "type": "header",
+      "content": "t:sections.header.settings.header__menu.content"
+    },
+    {
       "type": "link_list",
       "id": "menu",
       "default": "main-menu",
       "label": "t:sections.header.settings.menu.label"
+    },
+    {
+      "type": "select",
+      "id": "desktop_menu_type",
+      "options": [
+        {
+          "value": "menu_dropdown",
+          "label": "t:sections.header.settings.desktop_menu_type.menu_dropdown.label"
+        },
+        {
+          "value": "mega_menu",
+          "label": "t:sections.header.settings.desktop_menu_type.mega_menu.label"
+        },
+        {
+          "value": "hamburger_menu",
+          "label": "t:sections.header.settings.desktop_menu_type.hamburger_menu.label"
+        }
+      ],
+      "default": "menu_dropdown",
+      "label": "t:sections.header.settings.desktop_menu_type.label"
     },
     {
       "type": "header",

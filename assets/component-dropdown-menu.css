@@ -25,12 +25,13 @@
 }
 
 .header-menu__link {
-  font-weight: calc(100 + var(--font-heading-weight));
+  font-weight: var(--font-heading-weight);
+  font-style: var(--font-heading-style);
   display: flex;
   align-items: center;
   position: relative;
   white-space: nowrap;
-  font-size: var(--base-size--sm);
+  font-size: var(--base-size--base);
 }
 
 .list-menu li {

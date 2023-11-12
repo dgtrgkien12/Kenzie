@@ -4,9 +4,25 @@ ol, ul, menu {
   padding: 0;
 }
 
-a {
-  color: inherit;
-  text-decoration: inherit;
+.nav-menu {
+  height: 100%;
+}
+
+.list-menu {
+  display: flex;
+  gap: var(--base-spacing--3xl);
+  height: 100%;
+  align-items: center;
+}
+
+.list-menu li {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.list-menu li:not(.list-menu-item--parent) {
+  padding: var(--base-spacing--xxs) var(--base-spacing--lg);
 }
 
 .list-menu__item {
@@ -14,7 +30,12 @@ a {
   --line-height-menu-item : 1.4;
 }
 
+.list-menu-item--parent {
+  text-transform: uppercase;
+}
+
 .list-menu a {
+  position: relative;
   line-height: var(--line-height-menu-item);
   transition: 0.3s;
 }
@@ -26,7 +47,7 @@ a {
   bottom: 0px;
   transition: 0.3s;
   width: 0;
-  height: 2px;
+  height: 1px;
   background-color: rgb(var(--color-button));
 }
 

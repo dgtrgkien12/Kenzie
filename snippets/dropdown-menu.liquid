@@ -7,13 +7,13 @@
 
 {% assign links = links | default: section.settings.menu.links %}
 
-<nav class="header-menu header-menu--dropdown dropdown-menu">
-  <ul class="header-menu__menu list-menu list-menu--inline" role="list">
+<nav class="dropdown-menu nav-menu">
+  <ul class="list-menu list-menu--inline" role="list">
     {%- for link in links -%}
-      <li class="header-menu__item list-menu__item {% if link.links != blank %} list-menu-item--has-child{% endif %}{% if link.current %} list-menu-item--current{% elsif link.child_current %} list-menu-item--current-child{% endif %}">
+      <li class="list-menu__item list-menu-item--parent{% if link.links != blank %} list-menu-item--has-child{% endif %}{% if link.current %} list-menu-item--current{% elsif link.child_current %} list-menu-item--current-child{% endif %}">
           <a
             href="{{ link.url }}"
-            class="header-menu__link"
+            class="menu-link"
             {% if link.current %}
               aria-current="page"
             {% elsif link.child_current %}
@@ -24,16 +24,16 @@
           </a>
           {%- if link.links != blank -%}
             <ul
-              class="header-menu__submenu list-menu__submenu"
+              class="list-menu__submenu"
               aria-expanded="false"
               role="list"
               tabindex="-1"
             >
               {%- for childlink in link.links -%}
-                <li class="header-menu__item list-menu__item header-menu__item--child">
+                <li class="list-menu__item menu__item--child">
                   <a
                     href="{{ childlink.url }}"
-                    class="header-menu__link"
+                    class="menu-link"
                     {% if childlink.current %}
                       aria-current="page"
                     {% endif %}
@@ -41,12 +41,12 @@
                     <span>{{ childlink.title | escape }}</span>
                   </a>
                   {%- if childlink.links != blank -%}
-                    <ul class="header-menu__submenu list-menu__submenu">
+                    <ul class="list-menu__submenu">
                       {%- for grandchildlink in childlink.links -%}
-                        <li class="header-menu__item list-menu__item header-menu__item--child">
+                        <li class="list-menu__item menu__item--child">
                           <a
                             href="{{ grandchildlink.url }}"
-                            class="header-menu__link"
+                            class="menu-link"
                             {% if grandchildlink.current %}
                               aria-current="page"
                             {% endif %}

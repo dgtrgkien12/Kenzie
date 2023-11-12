@@ -32,6 +32,7 @@
       "settings": {
         "logo_and_menu_position": "logo-left-menu-center",
         "menu": "main-menu",
+        "desktop_menu_type": "menu_dropdown",
         "show_search_icon": true,
         "show_account_icon": true,
         "show_cart_icon": true,
